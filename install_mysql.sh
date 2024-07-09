@@ -2,8 +2,7 @@
 
 file_name=mysql*.tar.gz
 file_path=/opt/$file_name
-down_url=https://cdn.mysql.com/archives/mysql-5.7/mysql-5.7.44-linux-glibc
-2.12-x86_64.tar.gz
+down_url=https://cdn.mysql.com/archives/mysql-5.7/mysql-5.7.44-linux-glibc2.12-x86_64.tar.gz
 
 echo -e "\033[0;32m1.检查是否已经下载需要的安装包\033[0m"
 
@@ -24,7 +23,7 @@ dnf install -y ncurses-devel bison
 echo "2.2创建组和用户"
 groupadd mysql
 useradd -r -g mysql -s /sbin/nologin -d /opt/mysql mysql
-chmod -R mysql.mysql /opt/mysql
+chmod -R mysql:mysql /opt/mysql
 
 echo "2.3配置my.cnf"
 cat <<EOL | tee /etc/my.cnf > /dev/null
