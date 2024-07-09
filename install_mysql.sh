@@ -23,7 +23,7 @@ dnf install -y ncurses-devel bison
 echo "2.2创建组和用户"
 groupadd mysql
 useradd -r -g mysql -s /sbin/nologin -d /opt/mysql mysql
-chmod -R mysql:mysql /opt/mysql
+chown -R mysql:mysql /opt/mysql
 
 echo "2.3配置my.cnf"
 cat <<EOL | tee /etc/my.cnf > /dev/null
