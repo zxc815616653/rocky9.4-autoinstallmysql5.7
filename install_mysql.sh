@@ -175,4 +175,5 @@ mkdir -p /opt/mysql/data
 echo -e "\033[0;32m3.开始安装\033[0m"
 /opt/mysql/bin/mysqld --no-defaults --initialize --user=mysql --basedir=/opt/mysql --datadir=/opt/mysql/data --innodb-data-file-path=ibdata1:2G:autoextend --innodb_undo_tablespaces=2 --lower-case-table-names=1
 
-
+echo "启动mysql服务"
+/opt/mysql/support-files/mysql.server start
